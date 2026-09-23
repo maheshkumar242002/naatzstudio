@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #090A0F;
+    color: #F8FAFC;
+    overflow-x: hidden;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #090A0F;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #27293D;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #FACC15;
+  }
+}
+
+/* Brush stroke splash styling inspired by poster */
+.brush-badge {
+  position: relative;
+  display: inline-block;
+  background: #FACC15;
+  color: #090A0F;
+  padding: 0.25rem 1rem;
+  font-weight: 800;
+  clip-path: polygon(2% 0%, 98% 3%, 100% 95%, 0% 100%);
+  transform: rotate(-1deg);
+}
+
+.brush-badge-alt {
+  background: #090A0F;
+  color: #FACC15;
+  border: 2px solid #FACC15;
+  clip-path: polygon(0% 2%, 97% 0%, 100% 98%, 3% 96%);
+}
+
+.brush-underline {
+  position: relative;
+}
+
+.brush-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 6px;
+  background: #FACC15;
+  border-radius: 9999px;
+  opacity: 0.85;
+  transform: skew(-12deg);
+}
+
+/* Glassmorphism panel */
+.glass-panel {
+  background: rgba(24, 25, 36, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(250, 204, 21, 0.15);
+}
+
+.glass-panel-glow {
+  background: rgba(24, 25, 36, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(250, 204, 21, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(250, 204, 21, 0.15);
+}
+
+/* 3D card perspective hover */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
